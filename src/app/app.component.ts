@@ -23,6 +23,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     'graduate',
     'post graduate',
     'PhD',
+    'M.C.A',
+    'B.C.A'
   ];
 
   constructor(
@@ -71,7 +73,8 @@ export class AppComponent implements OnInit, AfterViewInit {
       profile: this.fileInput.nativeElement.files[0]?.name,
     };
     this.employeeService.postEmployee(employee).subscribe((res) => {
-      this.employees.unshift(res);
+      //this.employees.unshift(res);
+      this.employees = [...res, ...this.employees];
       this.clearForm();
     });
   }
