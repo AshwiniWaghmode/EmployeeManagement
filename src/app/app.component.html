@@ -50,8 +50,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
-  
-          <form [FormGroup]="employeeForm">
+            <form [formGroup]="employeeForm" (ngSubmit)="addEmployee()">
+
   
             <!-- FIRST AND LAST NAME -->
             <div class="row">
